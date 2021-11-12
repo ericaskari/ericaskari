@@ -47,12 +47,17 @@ jobs:
     runs-on: self-hosted
     environment:
       name: test
+    env:
+      ENV: ${{ secrets.ENV }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - name: ENV
         run: echo echo ${{ secrets.ENV }}
+
+      - name: ENV
+        run: echo echo $ENV
 
       - name: Dump GitHub context
         env:
