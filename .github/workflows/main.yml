@@ -43,3 +43,13 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  deployment:
+    runs-on: self-hosted
+    environment:
+      name: test
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: ENV
+        run: echo $ENV
