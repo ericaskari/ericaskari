@@ -52,7 +52,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: ENV
-        run: echo $ENV
+        run: echo echo ${{ secrets.ENV }}
 
       - name: Dump GitHub context
         env:
